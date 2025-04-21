@@ -1,0 +1,50 @@
+html{
+    box-sizing: border-box;
+    font-size: 62.5%;
+    font-family:Arial, Helvetica, sans-serif;
+    background-color: rgb(245,249,252);
+}
+*, *:before, *:after{
+    box-sizing: inherit;
+}
+header{
+    display: flex;
+    flex-direction: column;
+    flex-flow: center;
+    justify-content: center;
+}
+
+.bigBox{
+    display: flex;
+    flex-direction: column;
+    flex-flow: center;
+    justify-content: center;
+}
+.checkoff{
+    width: 16px;
+    height: 16px;
+    margin: 0px 16px;
+}
+.box1{
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+}
+.box1b{
+    display:flex;
+}
+.box2{
+    padding: 10px
+}
+.box3{
+    padding: 10px
+}
+h2{
+    font-size: 24px;
+    font-weight: bold;
+}
+h3{
+    color: red;
+    font-size: 16px;
+    font-weight: bold;
+}
