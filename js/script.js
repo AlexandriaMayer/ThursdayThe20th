@@ -1,3 +1,8 @@
+// I'm probably going to switch this project do python, because JS Date objects are only returning
+// dates in local timezones. This causes issues when the inputted date is a Thursday The 20th
+// ie 4/20/2023 - it returns 4/19/2023 19:00:00 GMT on my end. Tried to consult with others, 
+// but this appears to be a known limitation of JS Date that I wasn't familiar with.
+
 
 document.querySelector('#inputDate').addEventListener('input', inputDate)
 document.querySelector('#endDate').addEventListener('input',endingDate)
@@ -6,15 +11,17 @@ document.querySelector('#includeLastDay').addEventListener('change', includeLast
 document.querySelector('#submission').addEventListener('click', thursdayThe20th)
 
 function inputDate(){
-    let firstDate = new Date(document.querySelector('#inputDate').value)
-    console.log(firstDate)
+    let firstDate = document.querySelector('#inputDate').value
+    let firstDateP = new Date(Date.parse(firstDate))
+    console.log(firstDate, firstDateP)
     // I need to adjust the date for UTC - April 1st is returning March 31st at 7pm CST
-    return firstDate
+    return firstDateP
 }
 function endingDate(){
-    let secondDate = new Date(document.querySelector('#endDate').value)
-    console.log(secondDate)
-    return secondDate
+    let secondDate = document.querySelector('#endDate').value
+    let secondDateP = new Date(Date.parse(secondDate))
+    console.log(secondDate, secondDateP)
+    return secondDateP
 }
 /**function currentDate(){
     // I think for version 1.0, I don't need to get current date - this would just be a nice shortcut
@@ -31,17 +38,19 @@ function endingDate(){
     I decided not to include this function today
 **/
 function includeLastDay(){
-    let last = null
-    if (this.checked){
-        console.log("last day included")
-        last = true
+    // so last needs to be a query selector
+    let last = document.querySelector('#includeLastDay')
+    let checked = null,
+        ending = endingDate();
+    if (last.checked == true){
+        console.log(`last day ${ending} included`)
+        checked = true
     }
     else{
         console.log("last day not included")
-        last = false
+        checked = false
     }
-    return last
-    
+    return checked
 }
 
 
@@ -58,18 +67,21 @@ function thursdayThe20th(){
         thursday20th = 0;
     // covering the last day condition here.
     if (lastDay == false){
-        secondDate.setDate(-1)
+        secondDate.setDate(secondDate.getDate()-1)
+        console.log(`Last day not included. Last day is now ${secondDate}`)
     }
     if (firstDate < secondDate){
         for (let day = firstDate; day <= secondDate; day.setDate(day.getDate()+1)){
         if (day.getDate() === 20 && day.getDay() === 4){
             thursday20th++
+            console.log(day)
         }
         if (day.getDate() === 20){
             the20th++
         }
         if (day.getDay() === 4){
             thursday++
+            
         }
         let newDate = firstDate.setDate(firstDate.getDate() + 1)
         // console.log(`newDate ${newDate}, firstDate ${firstDate}`)
