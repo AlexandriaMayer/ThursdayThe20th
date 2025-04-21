@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    	<meta name="description" content="Counting the number of times Thursday the 20th happened between two dates">
+    	<meta name="keywords" content="memes, thursday, the 20th, out of touch thursdays, the simpsons">
+
+		<title>Thursday the 20th</title>
+
+		<link rel="stylesheet" href="css/style.css">
+		<link rel="stylesheet" href="css/normalize.css">
+		<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header>
+        <h1>Thursday the 20th!</h1>
+    </header>
+    <main>
+        <section class="boxBox">
+            
+            <img src="img\thursdayThe20th.jpg" width="800px" height="600px" alt="screencap from the simpsons with a man wearing a 'thursday the 20th' necklace">
+            <section class = "box1">
+                <section class = "box2">
+                    <label for="inputDate">Starting Date: </label>
+                    <input type="date" id="inputDate" required/>
+                    <label for="endDate">Ending Date: </label>
+                    <input type="date" id="endDate">
+                    <h3 id="datesReversed"></h3>
+                </section>
+                <section class = "box1b">
+                    <!--<label for="currentDate">Until Today?</label>
+                    <input type="checkbox" class="checkoff" id="currentDate">
+                    I decided I didn't want to have this feature today-->
+                    <label for="includeLastDay">Include Last Day? (adds 1 to the number of days)</label>
+                    <input type="checkbox" class="checkoff"id="includeLastDay">
+                </section>
+                <section class="box3">
+                    <label for="submission">Calculate!</label>
+                    <input type="submit" id="submission" required>
+                </section>
+                
+                <section class="box4">
+                    <h2>There were: </h2>
+                    <h2 id = "thursdays"></h2>
+                    <h2 id = "the20ths"></h2>
+                    <h2 id = "thursdayThe20ths"></h2>
+                    <h2>Between the two dates</h2>
+                </section>
+                
+            </section>
+        </section>
+    </main>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
