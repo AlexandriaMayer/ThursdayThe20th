@@ -2,7 +2,7 @@
 // dates in local timezones. This causes issues when the inputted date is a Thursday The 20th
 // ie 4/20/2023 - it returns 4/19/2023 19:00:00 GMT on my end. Tried to consult with others, 
 // but this appears to be a known limitation of JS Date that I wasn't familiar with.
-console.log(Temporal.Now.plainDateISO())
+
 
 document.querySelector('#inputDate').addEventListener('input', inputDate)
 document.querySelector('#endDate').addEventListener('input',endingDate)
@@ -23,20 +23,11 @@ function endingDate(){
     console.log(secondDate, secondDateP)
     return secondDateP
 }
-/**function currentDate(){
-    // I think for version 1.0, I don't need to get current date - this would just be a nice shortcut
-    if (this.checked){
-        let today = new Date();
-        console.log(`Today is ${today}`)
-    // Are you kidding me? It was that easy?   
-    }
-    else{
-        console.log("Using user specified date")
-    }
-    return today
+function currentDate(){
+    // this will be easier with temporal
+    console.log(Temporal.Now.plainDateISO())
 }
-    I decided not to include this function today
-**/
+
 function includeLastDay(){
     // so last needs to be a query selector
     let last = document.querySelector('#includeLastDay')
