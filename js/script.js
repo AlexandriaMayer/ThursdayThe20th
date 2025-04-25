@@ -6,22 +6,19 @@
 
 document.querySelector('#inputDate').addEventListener('input', inputDate)
 document.querySelector('#endDate').addEventListener('input',endingDate)
-// document.querySelector('#currentDate').addEventListener('change', currentDate)
+document.querySelector('#currentDate').addEventListener('change', currentDate)
 document.querySelector('#includeLastDay').addEventListener('change', includeLastDay)
 document.querySelector('#submission').addEventListener('click', thursdayThe20th)
 
 function inputDate(){
-    let firstDate = document.querySelector('#inputDate').value
-    let firstDateP = new Date(Date.parse(firstDate))
-    console.log(firstDate, firstDateP)
-    // I need to adjust the date for UTC - April 1st is returning March 31st at 7pm CST
-    return firstDateP
+    let firstDate = new Temporal.PlainDate(document.querySelector('#inputDate').value)
+    console.log(firstDate)
+    return firstDate
 }
 function endingDate(){
     let secondDate = document.querySelector('#endDate').value
-    let secondDateP = new Date(Date.parse(secondDate))
-    console.log(secondDate, secondDateP)
-    return secondDateP
+    console.log(secondDate)
+    return secondDate
 }
 function currentDate(){
     // this will be easier with temporal
