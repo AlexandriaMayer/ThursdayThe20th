@@ -16,7 +16,7 @@ function inputDate(){
     return firstDate
 }
 function endingDate(){
-    let secondDate = document.querySelector('#endDate').value
+    let secondDate = new Temporal.PlainDate(document.querySelector('#endDate').value)
     console.log(secondDate)
     return secondDate
 }
