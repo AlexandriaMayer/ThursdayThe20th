@@ -10,6 +10,9 @@ document.querySelector('#currentDate').addEventListener('change', currentDate)
 document.querySelector('#includeLastDay').addEventListener('change', includeLastDay)
 document.querySelector('#submission').addEventListener('click', thursdayThe20th)
 
+console.log(document.querySelector('#inputDate').value)
+console.log(document.querySelector('#endDate').value)
+
 function inputDate(){
     let firstDate = new Temporal.PlainDate(document.querySelector('#inputDate').value)
     console.log(firstDate)
