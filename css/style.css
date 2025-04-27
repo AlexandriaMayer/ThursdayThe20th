@@ -6,14 +6,19 @@ html{
 *, *:before, *:after{
     box-sizing: inherit;
 }
-header{
+header, body{
     display: flex;
     flex-direction: column;
     flex-flow: center;
     justify-content: center;
+    gap: 16px 16px;
+}
+h1{
+    font-size: 24px;
+    font-weight: 700;
 }
 
-.bigBox{
+.boxBox{
     display: flex;
     flex-direction: column;
     flex-flow: center;
@@ -48,11 +53,9 @@ h3{
     font-weight: bold;
 }
 
-/* Portrait */
-@media only screen 
-  and (min-device-width: 414px) 
-  and (max-device-width: 736px) 
-  and (-webkit-min-device-pixel-ratio: 3){ 
+/* for mobile */
+@media (min-width: 414px) 
+  and  (max-width: 736px) { 
     #simpsons{
         width: 410px;
         height: 308px;
