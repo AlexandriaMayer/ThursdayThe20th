@@ -47,3 +47,23 @@ h3{
     font-size: 16px;
     font-weight: bold;
 }
+
+/* Portrait */
+@media only screen 
+  and (min-device-width: 414px) 
+  and (max-device-width: 736px) 
+  and (-webkit-min-device-pixel-ratio: 3){ 
+    #simpsons{
+        width: 410px;
+        height: 308px;
+    }
+    .box2{
+        display:flex;
+        flex-direction: column;
+    }
+    .box1b{
+        display:flex;
+        flex-direction: column;
+    }
+
+}
