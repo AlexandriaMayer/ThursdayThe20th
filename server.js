@@ -2,11 +2,18 @@ const express = require ('express');
 const app = express();
 const PORT = 3000;
 
+const data = {
+    name: 'Lexi'
+}
+
 // app.use(express.static(__dirname));
 
 app.get('/', (req, res) =>{
     console.log ("Endpoint reached", req.method)
     res.sendStatus(200)
+    res.send(`<body>${JSON.stringify(data)}
+            <p></p>
+        </body>`)
 })
 
 app.get('/dashboard', (req, res) =>{
