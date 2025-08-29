@@ -3,6 +3,8 @@
 // ie 4/20/2023 - it returns 4/19/2023 19:00:00 GMT on my end. Tried to consult with others, 
 // but this appears to be a known limitation of JS Date that I wasn't familiar with.
 
+// I ended up using Temporal, which in the development stage, but is available in modern browsers.
+
 document.querySelector('#inputDate').addEventListener('input', inputDate)
 document.querySelector('#endDate').addEventListener('input', endingDate)
 //document.querySelector('#currentDate').addEventListener('change', currentDate)
